@@ -1,5 +1,6 @@
 package sn.isi.diti5.web.rest;
 
+import com.sun.xml.bind.v2.TODO;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,4 +38,7 @@ public class EtudiantController {
     public ResponseEntity<EtudiantDTO> getEtudiant(@PathVariable int id) {
         return this.etudiantService.getEtudiant(id);
     }
+    //TODO: ajout methode pour suppression et mise à jour d'étudiant
+    //TODO: /!\ les methodes dans les services doivent avoir chacune son test unitaire
+    //TODO: qui gère les différent cas (A rendre !)
 }
