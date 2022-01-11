@@ -228,6 +228,16 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
             <exclusions>
@@ -333,6 +343,26 @@
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
+            <plugin>
+
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.5.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <target>2.2</target>
+                    <schemaFiles>${project.basedir}/src/main/resources/Schema.xsd</schemaFiles>
+                    <packageName>sn.isi.diti5.wsdl</packageName>
+                    <clearOuputDir>false</clearOuputDir>
+                </configuration>
+
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
